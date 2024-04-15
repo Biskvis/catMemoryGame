@@ -81,7 +81,7 @@ function App() {
   const gen = memList.map((v, index) =>
     <div
       key={index}
-      className='m-4 bg-yellow-200 rounded-full w-40 h-40 hover:bg-yellow-500'
+      className='md:m-4 m-1  bg-yellow-200 rounded-full w-20 h-20 md:w-40  md:h-40 hover:bg-yellow-500'
       onClick={() => handleClick(index)}
     >
       {v.isVisible && <span className='text-center'>
@@ -97,7 +97,7 @@ function App() {
   return (
     <>{ !won ? <h1 className='p-4 text-center font-bold text-4xl'> Cat Memory game</h1> :
       <h1 className='p-4 text-center font-bold text-4xl text-red-600'>YOU WON</h1> }
-      <div className='flex flex-col justify-center items-center'>
+      <div className='grid place-content-center'>
         <div className='grid grid-rows-3 grid-cols-4'>
           {gen}
           {won && <Confetti
@@ -109,7 +109,7 @@ function App() {
         {count > 0 && <div className='p-4 text-2xl'> {!won ? `Moves: ${count}` : `You won in ${count} moves`}</div> 
           }
         <button
-          className='p-2 bg-red-500 rounded-lg text-center font-bold text-white hover:text-black hover:'
+          className='p-2 mt-4 bg-red-500 rounded-lg text-center font-bold text-white hover:text-black hover:'
           onClick={resetGame} 
          >New game</button>
       </div>
